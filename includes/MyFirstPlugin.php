@@ -2,18 +2,21 @@
 
 namespace includes;
 
-use includes\example\MFWExampleFilter;
-use includes\example\MFWExampleAction;
+//use includes\example\MFWExampleFilter;
+//use includes\example\MFWExampleAction;
+use includes\common\MFWLoader;
 
 class MyFirstPlugin {
     private static $instance = null;
     
     protected function __construct() {
-        $mfweFilter = MFWExampleFilter::newInstance();
-        $mfweFilter -> callMyFilter("Vladimir");
+//        $mfweFilter = MFWExampleFilter::newInstance();
+//        $mfweFilter -> callMyFilter("Vladimir");
+//        
+//        $mfweAction = MFWExampleAction::newInstance();
+//        $mfweAction -> callMyAction();
         
-        $mfweAction = MFWExampleAction::newInstance();
-        $mfweAction -> callMyAction();
+        MFWLoader::getInstance();
     }
     
     public static function getInstance() {
