@@ -2,11 +2,18 @@
 
 namespace includes;
 
+use includes\example\MFWExampleFilter;
+use includes\example\MFWExampleAction;
+
 class MyFirstPlugin {
     private static $instance = null;
     
     protected function __construct() {
-        ;
+        $mfweFilter = MFWExampleFilter::newInstance();
+        $mfweFilter -> callMyFilter("Vladimir");
+        
+        $mfweAction = MFWExampleAction::newInstance();
+        $mfweAction -> callMyAction();
     }
     
     public static function getInstance() {
@@ -19,7 +26,7 @@ class MyFirstPlugin {
     
     public static function activation() {
         //debug.log
-        error_log('plugin '.MFW_PLUGIN_NAME.' activation');
+        error_log('plugin ' . MFW_PLUGIN_NAME . ' activation');
     }
     
     public static function deactivation() {
