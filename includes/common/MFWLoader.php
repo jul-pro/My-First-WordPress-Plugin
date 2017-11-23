@@ -37,5 +37,6 @@ class MFWLoader
      * Метод будет срабатывать везде. Загрузка классов для Админ панеле и Сайта
      */
     public function all(){
+        MFWLocalization::getInstance();
     }
 }

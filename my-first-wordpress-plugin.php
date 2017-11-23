@@ -6,7 +6,7 @@ Description: Step by step development of the plugin.
 Version: 1.0
 Author: Vladimir Proskura
 Author URI: https://www.facebook.com/vl.proskura
-Text Domain: my-wordpress-plugin
+Text Domain: my-first-wordpress-plugin
 Domain Path: /languages/
 License: 
     Copyright 2017  Vladimir Proskura  (email: vl-pro@ukr.com)
