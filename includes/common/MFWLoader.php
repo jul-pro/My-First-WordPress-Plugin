@@ -4,6 +4,9 @@ namespace includes\common;
 
 use includes\example\MFWExampleAction;
 use includes\example\MFWExampleFilter;
+use includes\controllers\admin\menu\MyFirstWordpressMainAdminMenuController;
+use includes\controllers\admin\menu\MyFirstWordpressMainAdminSubMenuController;
+use includes\common\MFWLoaderScript;
 
 class MFWLoader
 {
@@ -31,6 +34,8 @@ class MFWLoader
      * Метод будет срабатывать когда вы находитесь в Админ панеле. Загрузка классов для Админ панели
      */
     public function admin(){
+        MyFirstWordpressMainAdminMenuController::newInstance();
+        MyFirstWordpressMainAdminSubMenuController::newInstance();
     }
     /**
      * Метод будет срабатывать когда вы находитесь Сайте. Загрузка классов для Сайта
@@ -45,10 +50,12 @@ class MFWLoader
         $mfwExampleAction = MFWExampleAction::newInstance();
         
         $mfwExampleFilter = MFWExampleFilter::newInstance();
-        $mfwExampleFilter->callMyFilter("Vladimir");
-        $mfwExampleFilter->callMyFilterAdditionalParameter("Vladimir", "Softgroup", "Poltava");
+        $mfwExampleFilter->callMyFilter("Roman");
+        $mfwExampleFilter->callMyFilterAdditionalParameter("Roman", "Softgroup", "Poltava");
         $mfwExampleAction = MFWExampleAction::newInstance();
         $mfwExampleAction->callMyAction();
         $mfwExampleAction->callMyActionAdditionalParameter( 'test1', 'test2', 'test3' );
+        
+        MFWLoaderScript::getInstance();
     }
 }
