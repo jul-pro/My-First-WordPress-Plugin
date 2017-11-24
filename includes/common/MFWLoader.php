@@ -1,6 +1,10 @@
 <?php
 
 namespace includes\common;
+
+use includes\example\MFWExampleAction;
+use includes\example\MFWExampleFilter;
+
 class MFWLoader
 {
     private static $instance = null;
@@ -38,5 +42,13 @@ class MFWLoader
      */
     public function all(){
         MFWLocalization::getInstance();
+        $mfwExampleAction = MFWExampleAction::newInstance();
+        
+        $mfwExampleFilter = MFWExampleFilter::newInstance();
+        $mfwExampleFilter->callMyFilter("Vladimir");
+        $mfwExampleFilter->callMyFilterAdditionalParameter("Vladimir", "Softgroup", "Poltava");
+        $mfwExampleAction = MFWExampleAction::newInstance();
+        $mfwExampleAction->callMyAction();
+        $mfwExampleAction->callMyActionAdditionalParameter( 'test1', 'test2', 'test3' );
     }
 }
