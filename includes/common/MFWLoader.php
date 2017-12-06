@@ -7,6 +7,7 @@ use includes\example\MFWExampleFilter;
 use includes\controllers\admin\menu\MyFirstWordpressMainAdminMenuController;
 use includes\controllers\admin\menu\MyFirstWordpressMainAdminSubMenuController;
 use includes\common\MFWLoaderScript;
+use includes\controllers\site\shortcodes\MFWCalendarPricesMonthShortcodeController;
 
 class MFWLoader
 {
@@ -41,6 +42,7 @@ class MFWLoader
      * Метод будет срабатывать когда вы находитесь Сайте. Загрузка классов для Сайта
      */
     public function site(){
+        MFWCalendarPricesMonthShortcodeController::newInstance();
     }
     /**
      * Метод будет срабатывать везде. Загрузка классов для Админ панеле и Сайта
