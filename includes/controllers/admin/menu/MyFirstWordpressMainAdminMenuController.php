@@ -2,7 +2,16 @@
 
 namespace includes\controllers\admin\menu;
 
+use includes\models\admin\menu\MFWMainAdminMenuModel;
+
 class MyFirstWordpressMainAdminMenuController extends MyFirstWordpressAdminMenuController {
+    public $model;
+    
+    public function __construct() {
+        parent::__construct();
+        $this->model = MFWMainAdminMenuModel::newInstance();
+    }
+    
     public function  action() {
         $pluginPage = add_menu_page(
             _x(
@@ -23,6 +32,8 @@ class MyFirstWordpressMainAdminMenuController extends MyFirstWordpressAdminMenuC
     }
     
     public function render() {
+        $pathView = MFW_PLUGIN_DIR."includes/views/admin/menu/MFWMainAdminMenu.view.php";
+        $this->loadView($pathView);
         _e("Hello", MFW_PLUGIN_TEXTDOMAIN);
     }
     
