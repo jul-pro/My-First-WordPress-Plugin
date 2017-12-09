@@ -9,7 +9,7 @@ class MFWLoaderScript {
     private function __construct(){
         // Проверяем в админке мы или нет
         if ( is_admin() ) {
-            add_action('admin_enqueue_scripts', array(&$this, 'loadScriptAdmin' ) );
+//            add_action('admin_enqueue_scripts', array(&$this, 'loadScriptAdmin' ) );
             add_action('admin_head', array(&$this, 'loadHeadScriptAdmin'));
         } else {
             add_action( 'wp_enqueue_scripts', array(&$this, 'loadScriptSite' ) );

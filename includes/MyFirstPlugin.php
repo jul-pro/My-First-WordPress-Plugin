@@ -6,6 +6,7 @@ namespace includes;
 //use includes\example\MFWExampleAction;
 use includes\common\MFWLoader;
 use includes\common\MFWDefaultOption;
+use includes\models\admin\menu\MFWGuestBookSubMenuModel;
 
 class MyFirstPlugin {
     private static $instance = null;
@@ -42,6 +43,7 @@ class MyFirstPlugin {
     
     public static function activation() {
         //debug.log
+        MFWGuestBookSubMenuModel::createTable();
         error_log('plugin ' . MFW_PLUGIN_NAME . ' activation');
     }
     

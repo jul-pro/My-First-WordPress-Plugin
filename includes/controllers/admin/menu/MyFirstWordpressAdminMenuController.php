@@ -8,7 +8,7 @@ abstract class MyFirstWordpressAdminMenuController {
     
     abstract public function action();
     abstract public function render();
-    abstract public static function newInstance();
+//    abstract public static function newInstance();
     
     protected function loadView($view, $type = 0, $data = array()) {
         if(file_exists($view)) {

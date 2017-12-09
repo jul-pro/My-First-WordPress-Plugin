@@ -6,6 +6,7 @@ use includes\example\MFWExampleAction;
 use includes\example\MFWExampleFilter;
 use includes\controllers\admin\menu\MyFirstWordpressMainAdminMenuController;
 use includes\controllers\admin\menu\MyFirstWordpressMainAdminSubMenuController;
+use includes\controllers\admin\menu\MFWGuestBookSubMenuController;
 use includes\common\MFWLoaderScript;
 use includes\controllers\site\shortcodes\MFWCalendarPricesMonthShortcodeController;
 
@@ -37,6 +38,7 @@ class MFWLoader
     public function admin(){
         MyFirstWordpressMainAdminMenuController::newInstance();
         MyFirstWordpressMainAdminSubMenuController::newInstance();
+        MFWGuestBookSubMenuController::newInstance();
     }
     /**
      * Метод будет срабатывать когда вы находитесь Сайте. Загрузка классов для Сайта

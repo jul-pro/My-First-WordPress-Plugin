@@ -4,7 +4,8 @@ namespace includes\controllers\admin\menu;
 
 use includes\models\admin\menu\MFWMainAdminMenuModel;
 
-class MyFirstWordpressMainAdminMenuController extends MyFirstWordpressAdminMenuController {
+class MyFirstWordpressMainAdminMenuController extends MyFirstWordpressAdminMenuController 
+    implements MFWICreatorInstance {
     public $model;
     
     public function __construct() {
