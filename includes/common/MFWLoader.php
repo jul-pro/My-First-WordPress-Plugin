@@ -9,6 +9,7 @@ use includes\controllers\admin\menu\MyFirstWordpressMainAdminSubMenuController;
 use includes\controllers\admin\menu\MFWGuestBookSubMenuController;
 use includes\common\MFWLoaderScript;
 use includes\controllers\site\shortcodes\MFWCalendarPricesMonthShortcodeController;
+use includes\controllers\site\shortcodes\MFWGuestBookShortcodesController;
 
 class MFWLoader
 {
@@ -45,6 +46,7 @@ class MFWLoader
      */
     public function site(){
         MFWCalendarPricesMonthShortcodeController::newInstance();
+        MFWGuestBookShortcodesController::newInstance();
     }
     /**
      * Метод будет срабатывать везде. Загрузка классов для Админ панеле и Сайта
