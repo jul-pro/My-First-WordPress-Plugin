@@ -50,7 +50,24 @@ class MFWLoaderScript {
 
     }
     public function loadHeadScriptAdmin(){}
-    public function loadScriptSite($hook){}
+    public function loadScriptSite($hook) {
+        $version = null;
+        wp_register_script(
+            MFW_PLUGIN_SLUG.'-Main',
+            MFW_PLUGIN_URL.'assets/site/js/MFWMain.js',
+            array(
+                'jquery'
+            ),
+            $version,
+            true    
+        );
+        
+        wp_enqueue_script(MFW_PLUGIN_SLUG.'-Main');
+        
+        $data = 'var ajaxurl="'.MFW_PLUGIN_AJAX_URL.'";';
+        
+        wp_add_inline_script(MFW_PLUGIN_SLUG.'-Main', $data, 'before');
+    }
     public function loadHeadScriptSite(){}
     public function loadFooterScriptSite(){}
 

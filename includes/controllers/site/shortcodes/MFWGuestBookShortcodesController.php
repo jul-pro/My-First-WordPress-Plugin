@@ -19,10 +19,10 @@ class MFWGuestBookShortcodesController extends MFWShortcodesController
         $output="";
         $output='<form action="" method="post">'
                 . '<label>'.__('User name', MFW_PLUGIN_TEXTDOMAIN).'</label>'
-                . '<input type="text" name="mfw_user_name">'
+                . '<input type="text" name="mfw_user_name" class="mfw-user-name">'
                 . '<label>'.__('Message', MFW_PLUGIN_TEXTDOMAIN).'</label>'
-                . '<textarea name="mfw_message"></textarea>'
-                . '<button class="mfw_btn-add">'.__('Add', MFW_PLUGIN_TEXTDOMAIN).'</button>'
+                . '<textarea name="mfw_message" class="mfw-message"></textarea>'
+                . '<button class="mfw-btn-add">'.__('Add', MFW_PLUGIN_TEXTDOMAIN).'</button>'
                 . '</form>';
         return $output;
     }

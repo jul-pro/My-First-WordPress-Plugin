@@ -10,6 +10,7 @@ use includes\controllers\admin\menu\MFWGuestBookSubMenuController;
 use includes\common\MFWLoaderScript;
 use includes\controllers\site\shortcodes\MFWCalendarPricesMonthShortcodeController;
 use includes\controllers\site\shortcodes\MFWGuestBookShortcodesController;
+use includes\ajax\MFWGuestBookAjaxHandler;
 
 class MFWLoader
 {
@@ -63,5 +64,6 @@ class MFWLoader
         $mfwExampleAction->callMyActionAdditionalParameter( 'test1', 'test2', 'test3' );
         
         MFWLoaderScript::getInstance();
+        MFWGuestBookAjaxHandler::newInstance();
     }
 }
