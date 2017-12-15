@@ -28,5 +28,8 @@ require_once plugin_dir_path(__FILE__) . '/config-path.php';
 require_once MFW_PLUGIN_DIR.'/includes/common/MFAutoload.php';
 require_once dirname(__FILE__).'/includes/MyFirstPlugin.php';
 
+add_action('widgets_init', create_function('', 'return '
+        . 'register_widget("includes\widgets\MFWGuestBookWidget");'));
+
 register_activation_hook(__FILE__, array('includes\MyFirstPlugin' ,  'activation' ));
 register_deactivation_hook(__FILE__, array('includes\MyFirstPlugin', 'deactivation'));

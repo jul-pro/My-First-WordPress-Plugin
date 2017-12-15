@@ -11,6 +11,7 @@ use includes\common\MFWLoaderScript;
 use includes\controllers\site\shortcodes\MFWCalendarPricesMonthShortcodeController;
 use includes\controllers\site\shortcodes\MFWGuestBookShortcodesController;
 use includes\ajax\MFWGuestBookAjaxHandler;
+use includes\widgets\MFWGuestBookDashboardWidget;
 
 class MFWLoader
 {
@@ -41,6 +42,7 @@ class MFWLoader
         MyFirstWordpressMainAdminMenuController::newInstance();
         MyFirstWordpressMainAdminSubMenuController::newInstance();
         MFWGuestBookSubMenuController::newInstance();
+        MFWGuestBookDashboardWidget::newInstance();
     }
     /**
      * Метод будет срабатывать когда вы находитесь Сайте. Загрузка классов для Сайта
