@@ -7,12 +7,12 @@ class MFWExampleAction {
         add_action('my_action', array($this, 'myActionFunction'));
         
         // Прикрепим функцию к событию 'my_hook'
-        add_action('my_hook', function(){ error_log(1); });
-        add_action('my_hook', function(){ error_log(2); });
-        add_action('my_hook', function(){ error_log(3); });
-        add_action('my_hook', function(){ error_log(4); }, 15);
-        add_action('my_hook', function(){ error_log(5); }, 10); // можно не указывать 10 - по умолчанию
-        add_action('my_hook', function(){ error_log(6); }, 5);
+//        add_action('my_hook', function(){ error_log(1); });
+//        add_action('my_hook', function(){ error_log(2); });
+//        add_action('my_hook', function(){ error_log(3); });
+//        add_action('my_hook', function(){ error_log(4); }, 15);
+//        add_action('my_hook', function(){ error_log(5); }, 10); // можно не указывать 10 - по умолчанию
+//        add_action('my_hook', function(){ error_log(6); }, 5);
 
         do_action('my_hook');
         
@@ -20,7 +20,7 @@ class MFWExampleAction {
             error_log(__('Hello', MFW_PLUGIN_TEXTDOMAIN)); }, 100);
             
         add_action('my_action', array(&$this, 'myActionFunctionAdditionalParameter'), 10, 3);
-        add_action('plugins_loaded', function(){ error_log(__('Hello', MFW_PLUGIN_TEXTDOMAIN)); }, 100);
+//        add_action('plugins_loaded', function(){ error_log(__('Hello', MFW_PLUGIN_TEXTDOMAIN)); }, 100);
     }
     
     public static function newInstance() {
@@ -29,7 +29,7 @@ class MFWExampleAction {
     }
     
     public function myActionFunction() {
-        error_log('my_action call');
+//        error_log('my_action call');
     }
     
     public function callMyAction() {
@@ -42,7 +42,7 @@ class MFWExampleAction {
     
     public function myActionFunctionAdditionalParameter($data1 = "", $data2 = "", $data3 = "" ){
         //Выводим сообщение в debug.log
-        error_log("my_action call {$data1} {$data2} {$data3}");
+//        error_log("my_action call {$data1} {$data2} {$data3}");
     }
 }
 

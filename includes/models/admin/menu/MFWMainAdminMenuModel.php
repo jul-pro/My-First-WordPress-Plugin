@@ -8,11 +8,11 @@ class MFWMainAdminMenuModel implements MFWICreatorInstance {
     
     public function __construct() {
         add_action('admin_init', array(&$this, 'createOption'));
-        error_log(1);
+        //error_log(1);
     }
     
     public function createOption() {
-        error_log(2);
+        //error_log(2);
         
         register_setting('MFWMainSettings', MFW_PLUGIN_OPTION_NAME, array(&$this, 'saveOption'));
         add_settings_section('mfw_account_section_id', __('Account', MFW_PLUGIN_TEXTDOMAIN), '', 'mfw-development-plugin');
@@ -55,7 +55,7 @@ class MFWMainAdminMenuModel implements MFWICreatorInstance {
     
     
     public function saveOption($input) {
-        error_log(3);
+        //error_log(3);
         error_log(print_r($input, true));
         return $input;
     }

@@ -7,6 +7,7 @@ namespace includes;
 use includes\common\MFWLoader;
 use includes\common\MFWDefaultOption;
 use includes\models\admin\menu\MFWGuestBookSubMenuModel;
+use includes\custom_post_type\PortfolioPostType;
 
 class MyFirstPlugin {
     private static $instance = null;
@@ -20,6 +21,7 @@ class MyFirstPlugin {
         
         MFWLoader::getInstance();
         add_action('plugins_loaded', array(&$this, 'setDefaultOptions'));
+        new PortfolioPostType();
     }
     
     public function setDefaultOptions() {
@@ -44,14 +46,12 @@ class MyFirstPlugin {
     public static function activation() {
         //debug.log
         MFWGuestBookSubMenuModel::createTable();
-        error_log('plugin ' . MFW_PLUGIN_NAME . ' activation');
+//        error_log('plugin ' . MFW_PLUGIN_NAME . ' activation');
     }
     
     public static function deactivation() {
         delete_option(MFW_PLUGIN_OPTION_NAME);
         delete_option(MFW_PLUGIN_OPTION_VERSION);
-        
-        error_log('plugin '.MFW_PLUGIN_NAME.' deactivation');
     }
 }
 

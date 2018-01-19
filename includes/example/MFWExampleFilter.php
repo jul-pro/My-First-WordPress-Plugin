@@ -26,7 +26,7 @@ class MFWExampleFilter {
         $name = apply_filters('my_filter', $name);
         
         //Выводим результат в debug.log
-        error_log($name);
+//        error_log($name);
     }
     
     public function myFiterFunctionAdditionalParameter( $str, $data1 = "", $data2 = "" ){
@@ -37,7 +37,7 @@ class MFWExampleFilter {
     public function callMyFilterAdditionalParameter( $name, $data1, $data2 ){
         $name = apply_filters('my_filter', $name, $data1, $data2);
         //Выводим результат в debug.log
-        error_log($name);
+//        error_log($name);
      }
 }
 
